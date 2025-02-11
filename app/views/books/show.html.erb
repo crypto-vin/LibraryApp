@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1><%= @book.title %></h1>
+      <p class="lead"><strong>Author:</strong> <%= @book.author %></p>
+      <p><strong>ISBN:</strong> <%= @book.isbn %></p>
+      <p>
+        <span class="badge <%= @book.available? ? 'bg-success' : 'bg-danger' %>">
+          <%= @book.available? ? 'Available' : 'Borrowed' %>
+        </span>
+      </p>
+      <% if current_user && @book.available? %>
+        <%= button_to 'Borrow', borrow_book_path(@book), method: :post, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

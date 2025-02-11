@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <h1 class="mb-4">Your Borrowed Books</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Due Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @current_borrowings.each do |borrowing| %>
+        <tr>
+          <td><%= borrowing.book.title %></td>
+          <td><%= borrowing.due_date.to_date %></td>
+          <td>
+            <%= button_to 'Return', return_borrowing_path(borrowing), method: :patch, class: 'btn btn-sm btn-warning' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
