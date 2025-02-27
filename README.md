@@ -17,7 +17,7 @@ This is a simple book lending application built with **Ruby on Rails 8**. Users 
 
 ### 1️⃣ **Clone the Repository**
 ```sh
-git clone https://github.com/your-username/book-library.git
+git clone https://github.com/crypto-vin/LibraryApp.git
 cd book-library
 ```
 
